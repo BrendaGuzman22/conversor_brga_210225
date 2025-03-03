@@ -1,0 +1,56 @@
+const inputfield = document.getElementById('input-temp');
+const fromUnitfield=document.getElementById('input-unit');
+const tounifield= document.getElementById('output-unit');
+const outputfield=document.getElementById('output-temp');
+const form = document.getElementById('coverter');
+
+function converttemp(value,frounit,tounit){
+    /**
+     * convertir de celsius a fahrenheit o kelvin
+     */
+    if (frounit=== 'c'){
+        if (tounit === 'f'){
+            return value* 9 / 5 + 32;
+            else if(tounit === 'k') {
+                return value + 273.15;
+
+            }
+            return value;
+        }
+
+        /**
+         *  convertir de fahrenheitt a celsius o kevil
+         */
+        if ( fromunit === 'f'){
+            if(tounit === 'k'){
+                return (value -32) * 5 / 9;
+                else if (tounit=== 'k'){
+                    return (value + 459.67) * / 9;
+                }
+            }
+            return value;
+        }
+          /**
+           * convertir kelvin a fahrenheitt o celsius
+           */
+    }
+    if (froUnit === 'K'){
+        if (fromunit=== 'c'){
+            return value -273.15;
+            else if (tounit=== 'f'){
+                return value * 9 / 5 -459.67;
+            }
+            return value;
+        } 
+        throw new console.error('unidad de temperatura invalidad');
+        
+    }
+    form.addEventListener ('input',() ) => {
+     const inputtemp=parseFloat (inputfield.value);
+     const fromunit = fromUnitfield.value;
+     const tounitfield.value;
+     const outputtemp=converttemp(inputtemp,frounit,tounit);
+
+     outputfield.value=value=(Math.round (outputtemp*100) / 100 )+''+ tounit.toupperCase();
+    }
+    }
